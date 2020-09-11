@@ -29,14 +29,16 @@ if (isProd) {
   );
   renderer = createRenderer(bundle, template);
 } else {
-  // 开发模式需要设置 dev-server 和 hot-reload
-  // TODO
+  // DEV
+  require("../config/setup-dev-server")(server).then((bundle, template) => {
+    renderer = createRenderer(bundle, template);
+  });
 }
 
 // TODO 静态资源缓存
 
 server.use(compression({ threshold: 0 })); // gzip 压缩
-server.use(express.static("./dist")); 
+server.use(express.static("./dist"));
 
 server.get("*", (req, res) => {
   if (!renderer) {

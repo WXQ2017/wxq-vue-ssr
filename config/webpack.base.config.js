@@ -8,7 +8,7 @@ const baseOptions = {
   devtool: "inline-source-map",
   output: {
     path: path.resolve(__dirname, "../dist"),
-    filename: "js/[name]_[chunkhash].js",
+    filename: "js/[name]_[hash]].js",
     publicPath,
   },
   resolve: {
