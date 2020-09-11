@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build": "rimraf server/dist && npm run build:client && npm run build:server",
     "build:server": "cross-env NODE_ENV=production  webpack --config config/webpack.server.config.js --progress",
     "build:client": "cross-env NODE_ENV=production  webpack --config config/webpack.client.config.js --progress",
-    "start": "cross-env NODE_ENV=production node server/server.js"
+    "start": "cross-env NODE_ENV=production node ./server/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "html-webpack-plugin": "^4.4.1",
     "lru-cache": "^6.0.0",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.3",
     "vue-server-renderer": "^2.6.12",

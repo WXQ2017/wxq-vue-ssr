@@ -503,3 +503,4 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/macos,linux,windows,intellij,visualstudio
 
 .idea/
+/server/dist

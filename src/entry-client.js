@@ -1,5 +1,4 @@
-import { createApp } from "./app";
-import Vue from "vue";
+import { createApp } from "./app.js";
 
 // 客户端特定引导逻辑……
 
