@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf server/dist && npm run build:client && npm run build:server",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:server": "cross-env NODE_ENV=production  webpack --config config/webpack.server.config.js --progress",
     "build:client": "cross-env NODE_ENV=production  webpack --config config/webpack.client.config.js --progress",
     "start": "cross-env NODE_ENV=production node ./server/server.js",

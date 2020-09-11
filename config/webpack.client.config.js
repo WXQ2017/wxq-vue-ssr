@@ -14,27 +14,18 @@ module.exports = merge(baseConfig, {
     runtimeChunk: {
       name: "manifest",
     },
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          priority: 1,
-          minSize: 30000,
-          chunks: "initial",
-          minChunks: 1,
-        },
-        commons: {
-          test: /[\\/]src[\\/]/,
-          name: "commons",
-          priority: 0,
-          minSize: 30000,
-          chunks: "initial",
-          minChunks: 2,
-          reuseExistingChunk: true,
-        },
-      },
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendors: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: "vendors",
+    //       priority: 1,
+    //       minSize: 30000,
+    //       chunks: "initial",
+    //       minChunks: 1,
+    //     },
+    //   },
+    // },
   },
   plugins: [
     // 此插件在输出目录中
@@ -49,7 +40,7 @@ module.exports = merge(baseConfig, {
         },
         filename: 'index.html',
         template: path.resolve(__dirname, "../src/index.html"),
-        chunks: ["app", "manifest", "vendors", "commons"],
+        chunks: ["app", "manifest"],
       }),
   ],
 });
