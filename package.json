@@ -1,0 +1,36 @@
+{
+  "name": "ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build:server": "cross-env NODE_ENV=production  webpack --config config/webpack.server.config.js --progress",
+    "build:client": "cross-env NODE_ENV=production  webpack --config config/webpack.client.config.js --progress",
+    "start": "cross-env NODE_ENV=production node server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue-router": "^3.4.3",
+    "vuex": "^3.5.1"
+  },
+  "dependencies": {
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "lru-cache": "^6.0.0",
+    "node-sass": "^4.14.1",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.3",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
+    "vuex-router-sync": "^5.0.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
